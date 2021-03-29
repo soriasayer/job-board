@@ -17,11 +17,8 @@ export const JobForm = ({history}) => {
   }
   const handleClick = (event) => {
     event.preventDefault();
-    const companyId = "SJV0-wdOM"
-    const {title, description} = newJob
-   createJob({companyId, title, description})
+   createJob(newJob)
     .then((job) => {
-      console.log(job)
       history.push(`/jobs/${job.id}`)
     })
   }
